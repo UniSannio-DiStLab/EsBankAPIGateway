@@ -10,5 +10,7 @@ RUN mvn -B package --file pom.xml
 
 WORKDIR /source/target
 
+USER root
+#ENTRYPOINT sleep 100000
 ENTRYPOINT ./SpringGateway.jar
 
