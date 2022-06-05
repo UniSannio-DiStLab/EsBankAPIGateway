@@ -26,12 +26,12 @@ public class Application {
 		System.out.println(customerEndpoint);
 		RouteLocator rl = builder.routes()
 			.route(p -> p
-				.path("/api-v1/bank/accounts/**")
-				.filters(f -> f.rewritePath("/api-v1/bank/","/AccountMS/api-v1/"))
+				.path("/Bank/api-v1/bank/accounts/**")
+				.filters(f -> f.rewritePath("/Bank/api-v1/bank/","/AccountMS/api-v1/"))
 				.uri(accountEndpoint))
 			.route(p -> p
-				.path("/api-v1/bank/customers/**")
-				.filters(f -> f.rewritePath("/api-v1/bank/","/CustomerMS/api-v1/"))
+				.path("/Bank/api-v1/bank/customers/**")
+				.filters(f -> f.rewritePath("/Bank/api-v1/bank/","/CustomerMS/api-v1/"))
 				.uri(customerEndpoint))
 			.build();
 		return rl;
